@@ -4,4 +4,13 @@ def read_file(ciphered):
     return ciphered_text
 
 
+def frequencyAnalysis(cipheredText):
+    frequency = {}
+    for letter in cipheredText:
+        frequency[letter] = (cipheredText.count(letter)/len(cipheredText))*100
+    return frequency
+
+cipher = read_file('cipherText.txt')
+possibleKey = frequencyAnalysis(cipher)
+
 
